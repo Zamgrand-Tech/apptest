@@ -170,7 +170,7 @@
     <ul>
       <li style="--i: 1;"><a href="#home">Home</a></li>
       <li style="--i: 2;"><a href="index2.html">Dangane da marubuci</a></li>
-      <li style="--i: 3;"><a href="#" id="ramliLink">Matakan Koyon Ramli 50</a></li>
+      <li style="--i: 3;"><a href="#" id="ramliLink">Matakan Koyon Rami 50</a></li>
       <li style="--i: 5;"><a href="#" id="izanazalaLink">Izanazala</a></li>
       <li style="--i: 6;"><a href="#quran">Zoben Buruji</a></li>
       <li style="--i: 7;"><a href="#ayyuka">Ayyukan da Mukeyi</a></li>
@@ -225,55 +225,56 @@
   </footer>
 
   <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     });
+  });
 
-    // Ramli 50 Payment Check
-    function openRamli50() {
-      if (localStorage.getItem('hasPaidRaml50') === 'true') {
-        window.location.href = 'ramliafter.html';
-      } else {
-        window.location.href = 'raml50.html';
-      }
+  // Ramli 50 Payment Check
+  function openRamli50() {
+    if (localStorage.getItem('hasPaidRaml50') === 'true') {
+      // Open PDF directly in same tab so it fills the screen on mobile
+      window.location.href = 'raml50.pdf';
+    } else {
+      window.location.href = 'raml50.html';
     }
-    document.getElementById('ramliLink').addEventListener('click', openRamli50);
-    document.getElementById('ramliButton').addEventListener('click', openRamli50);
+  }
+  document.getElementById('ramliLink').addEventListener('click', openRamli50);
+  document.getElementById('ramliButton').addEventListener('click', openRamli50);
 
-    // Izanazala Payment Check
-    function openIzanazala() {
-      if (localStorage.getItem('hasPaidIzanazala') === 'true') {
-        window.location.href = 'izanazalaafter.html';
-      } else {
-        window.location.href = 'izanazala.html';
-      }
+  // Izanazala Payment Check
+  function openIzanazala() {
+    if (localStorage.getItem('hasPaidIzanazala') === 'true') {
+      window.location.href = 'izanazala.pdf';
+    } else {
+      window.location.href = 'izanazala.html';
     }
-    document.getElementById('izanazalaLink').addEventListener('click', openIzanazala);
+  }
+  document.getElementById('izanazalaLink').addEventListener('click', openIzanazala);
 
-    // Animate sections
-    const elements = document.querySelectorAll('.content');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.4 });
-    elements.forEach(element => {
-      element.style.opacity = 0;
-      element.style.transform = 'translateY(10vw)';
-      element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
-      observer.observe(element);
+  // Animate sections
+  const elements = document.querySelectorAll('.content');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
     });
-  </script>
+  }, { threshold: 0.4 });
+  elements.forEach(element => {
+    element.style.opacity = 0;
+    element.style.transform = 'translateY(10vw)';
+    element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+    observer.observe(element);
+  });
+</script>
+
 </body>
 </html>
-

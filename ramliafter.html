@@ -16,7 +16,8 @@
             background: #1e1e38;
             color: #e6e6fa;
             height: 100vh;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .header {
             background: #0f0f1a;
@@ -27,12 +28,23 @@
             font-family: 'Noto Naskh Arabic', serif;
             letter-spacing: 0.5px;
         }
-        iframe {
-            width: 100%;
-            height: calc(100vh - 15vw);
-            border: none;
-            display: block;
+        .pdf-container {
+            flex: 1;
             background: #1e1e38;
+        }
+        iframe, object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .fallback-link {
+            text-align: center;
+            padding: 5vw;
+        }
+        .fallback-link a {
+            color: moccasin;
+            text-decoration: underline;
+            font-size: 4.5vw;
         }
     </style>
 </head>
@@ -42,8 +54,18 @@
         📖 Matakan Koyon Ramli 50
     </div>
 
-    <!-- PDF Embed in mobile-fit mode -->
-    <iframe src="raml50.pdf#toolbar=0&navpanes=0&view=FitH"></iframe>
+    <div class="pdf-container">
+        <!-- Try iframe first -->
+        <iframe src="raml50.pdf#toolbar=0&navpanes=0&view=FitH"></iframe>
+
+        <!-- Fallback: If iframe fails, object will try -->
+        <object data="raml50.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf">
+            <div class="fallback-link">
+                ⚠️ Your browser can't display the PDF.  
+                <a href="raml50.pdf" target="_blank">Click here to open the PDF</a>
+            </div>
+        </object>
+    </div>
 
 </body>
 </html>

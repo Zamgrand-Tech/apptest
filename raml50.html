@@ -115,12 +115,12 @@
     </footer>
 
     <!-- Paystack Script -->
-    <script src="https://js.paystack.co/v1/inline.js"></script>
-   <script>
+   <script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Redirect if already purchased
+        // If already purchased, go straight to the PDF
         if (localStorage.getItem("raml50Purchased") === "true") {
-            window.location.href = "ramliafter.html";
+            window.location.href = "raml50.pdf";
         }
     });
 
@@ -128,13 +128,13 @@
         var handler = PaystackPop.setup({
             key: 'pk_live_70d8ee012d6b08d77421df4d720a20c299e8e88a',
             email: 'koyonramlidahisabiasaukake@gmail.com',
-            amount: 10000, // ₦50 in Kobo
+            amount: 500000, // ₦5000 in Kobo (this was wrong before)
             currency: 'NGN',
             ref: 'RAMLI-' + Math.floor(Math.random() * 1000000000 + 1),
             callback: function(response) {
                 localStorage.setItem("raml50Purchased", "true");
                 alert('Payment successful! Reference: ' + response.reference);
-                window.location.href = 'ramliafter.html';
+                window.location.href = 'raml50.pdf';
             },
             onClose: function() {
                 alert('Transaction was cancelled');
@@ -145,6 +145,6 @@
 </script>
 
 
+
 </body>
 </html>
-

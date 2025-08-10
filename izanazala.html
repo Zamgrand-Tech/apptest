@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Adamu Ibrahim Kano - Ramli Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+        body {
+            background: #1e1e38;
+            color: #e6e6fa;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5vw 0;
+            background: #0f0f1a;
+        }
+        .logo-container p {
+            font-size: 5vw;
+            font-weight: 700;
+            color: moccasin;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .content {
+            padding: 10vw 5vw;
+            text-align: center;
+        }
+        .animated-title {
+            font-size: 6vw;
+            color: moccasin;
+            margin-bottom: 4vw;
+            font-family: 'Noto Naskh Arabic', serif;
+            animation: fadeInTitle 2s ease-out forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .content p {
+            font-size: 4vw;
+            max-width: 90%;
+            margin: 0 auto 8vw;
+            line-height: 1.8;
+            color: #d3d3d3;
+            text-align: justify;
+        }
+        .btn-buy {
+            background: #5b9bd5;
+            color: #fff;
+            padding: 3vw 6vw;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 4vw;
+            font-family: 'Noto Naskh Arabic', serif;
+            transition: background 0.4s ease, transform 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn-buy:hover {
+            background: #4a7bb8;
+            transform: translateY(-2px);
+        }
+        footer {
+            margin-top: 10vw;
+            text-align: center;
+            font-size: 3.5vw;
+            color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="animated-title">Izanazala</div>
+
+        <p>
+            Wannan littafi mai Albarka ya kawo hukunci na izanazala,  shin 
+            fassarar taurari a cikin gidaje kamar idan kausaji ya sauka a 1 ko 2 
+            har zuwa gidan 16 me yake nufi cikin wadannan gidaje haka za abi 
+            taurarin har zuwa kan jama ‘a tauraro na sha shidda 16 kowanne 
+            mene fassararsa in ya sauka a kowanne gida. <br>
+           <i>دﻣﺣﻣ لاءو دﻣﺣﻣ ﻰﻠﻋ لﺻ مﮭﻠﻟا</i>
+        </p>
+           
+        <div class="animated-title">Sadaukarwa</div>
+        <p>
+            Ina sadaukar da wannan littafi ga Manzon Allah 
+            s.a.w da Ahalinsa dakuma Ruhin iyayena Alh 
+            Ibrahim Rabi’u lalo Dambatta da Haj  Safiyya 
+            Abubakar Dambatta Allah kai musu Rahama in 
+            Tamu tazo kasa mu cika da Imani Ameen.
+        </p>
+
+        <div class="animated-title">Godiya</div>
+        <p>
+            Ina mai godiya da fatan Alkhairi ga daukacin malamaina baki 
+            daya na addini dana zamani dama duk wanda ya sanar dani 
+            koda harafine Allah ya saka musu da alkhairi,  musamman 
+            wadanda suka koyar dani wannan fannin na ilimin Ramli da 
+            Hisabi kamar:<br><br>
+            1.  Sheikh Sharif Nasir Sahrif Ali (Hakimin laqani na gwale yamma)   <br>
+            2. Sheikh Jibril Sani (Sarkin Laqani na gwale lga) <br>
+            3.  Sheikh Alhasan  Yamadawa (ﻲﺧوطﻟا بﺣﺎﺻ) <br>
+            4.  Sheikh Dr Abubakar Gaida (ﻲﺧوطﻟا بﺣﺎﺻ) <br>
+            5. Sheikh Sani Abacha youth centre.
+        </p>
+    
+        <!-- Paystack Button -->
+        <a href="#" class="btn-buy" onclick="payWithPaystack()">Download Izanazala PDF ₦5000</a> <br><br>
+        <a href="#" class="btn-buy" onclick="payWithPaystack()" style="background-color: rgb(69, 212, 100);">Download Izanazala AUDIO ₦5000</a>
+    </div>
+
+    <footer>
+        &copy; 2025 Adamu Ibrahim Kano. All rights reserved.
+    </footer>
+
+    <!-- Paystack Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+    // Redirect if already paid
+    if (localStorage.getItem('hasPaidIzanazala') === 'true') {
+        window.location.href = 'izanazalaafter.html';
+    }
+
+    function payWithPaystack() {
+        var handler = PaystackPop.setup({
+            key: 'pk_live_70d8ee012d6b08d77421df4d720a20c299e8e88a',
+            email: 'koyonramlidahisabiasaukake@gmail.com',
+            amount: 5000, // ₦50 in Kobo
+            currency: 'NGN',
+            ref: 'IZANAZALA-' + Math.floor(Math.random() * 1000000000 + 1),
+            callback: function(response) {
+                alert('Payment successful! Reference: ' + response.reference);
+                localStorage.setItem('hasPaidIzanazala', 'true');
+                window.location.href = 'izanazalaafter.html';
+            },
+            onClose: function() {
+                alert('Transaction was cancelled');
+            }
+        });
+        handler.openIframe();
+    }
+</script>
+
+
+</body>
+</html>

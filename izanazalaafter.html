@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Izanazala - Read PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+        body {
+            background: #1e1e38;
+            color: #e6e6fa;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header {
+            background: #0f0f1a;
+            padding: 4vw;
+            text-align: center;
+            font-size: 5vw;
+            color: #5b9bd5;
+            font-family: 'Noto Naskh Arabic', serif;
+            letter-spacing: 0.5px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 15vw);
+            border: none;
+            display: block;
+            background: #1e1e38;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        📖 قراءة كتاب إذانازالا
+    </div>
+
+    <!-- PDF Embed in mobile-fit mode -->
+    <iframe src="izanazala.pdf#toolbar=0&navpanes=0&view=FitH"></iframe>
+
+</body>
+</html>

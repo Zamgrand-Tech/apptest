@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Adamu Ibrahim Kano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Amiri', serif;
+    }
+    body {
+      background: #1e1e38;
+      color: #e6e6fa;
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5vw 0;
+      background: #0f0f1a;
+    }
+    .logo-text {
+      font-size: 5vw;
+      font-weight: 700;
+      color: #5b9bd5;
+      font-family: 'Noto Naskh Arabic', serif;
+    }
+    nav {
+      background: #0f0f1a;
+      padding: 3vw;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3vw;
+    }
+    nav ul li {
+      animation: slideIn 0.7s ease-out forwards;
+      animation-delay: calc(0.2s * var(--i));
+    }
+    nav ul li a {
+      color: #e6e6fa;
+      text-decoration: none;
+      font-size: 4vw;
+      font-family: 'Noto Naskh Arabic', serif;
+      padding: 2vw 4vw;
+      border-radius: 8px;
+      transition: background 0.4s ease, color 0.4s ease;
+      display: block;
+    }
+    nav ul li a:hover {
+      background: #5b9bd5;
+      color: #fff;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 5vw;
+      animation: fadeInUp 2s ease-out;
+    }
+    .hero h1 {
+      font-size: 8vw;
+      font-family: 'Noto Naskh Arabic', serif;
+      color: #fff;
+      margin-bottom: 5vw;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+    .hero p {
+      font-size: 4vw;
+      max-width: 90%;
+      margin-bottom: 6vw;
+      line-height: 1.7;
+    }
+    .btn {
+      background: #5b9bd5;
+      color: #fff;
+      padding: 3vw 6vw;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 4vw;
+      font-family: 'Noto Naskh Arabic', serif;
+      transition: background 0.4s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+      background: #4a7bb8;
+      transform: translateY(-2px);
+    }
+    .content {
+      padding: 10vw 5vw;
+      text-align: center; 
+      background: #1e1e38;
+    }
+    .content h2 {
+      font-size: 6vw;
+      margin-bottom: 5vw;
+      color: #5b9bd5;
+      font-family: 'Noto Naskh Arabic', serif;
+    }
+    .content p {
+      font-size: 4vw;
+      max-width: 90%;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #d3d3d3;
+    }
+    footer {
+      background: #0f0f1a;
+      padding: 6vw 5vw;
+      text-align: center;
+      font-size: 3.5vw;
+      color: #a9a9a9;
+    }
+    footer a {
+      color: #5b9bd5;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(10vw); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-15vw); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @media (min-width: 769px) {
+      body {
+        max-width: 768px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <p style="color: moccasin;">KOYON RAMLI DA HISABI A SAUKAKE</p>
+  </div>
+
+  <nav>
+    <ul>
+      <li style="--i: 1;"><a href="#home">Home</a></li>
+      <li style="--i: 2;"><a href="index2.html">Dangane da marubuci</a></li>
+      <li style="--i: 3;"><a href="#" id="ramliLink">Matakan Koyon Rami 50</a></li>
+      <li style="--i: 5;"><a href="#" id="izanazalaLink">Izanazala</a></li>
+      <li style="--i: 6;"><a href="#quran">Zoben Buruji</a></li>
+      <li style="--i: 7;"><a href="#ayyuka">Ayyukan da Mukeyi</a></li>
+      <li style="--i: 7;"><a href="#test">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+      <p style="text-align: center;">Welcome to Adamu Ibrahim Kano, your spiritual hub for Islamic resources.</p>
+      <a href="#" id="ramliButton" class="btn">Ramli Matakin Farko</a>
+    </div>
+  </section>
+
+  <section class="content" id="books">
+    <h2>Jerin Litattafan da Muka Wallafa</h2>
+    <p>
+      <strong>1.</strong> Matakan Koyon Ramli 50<br>
+      <strong>2.</strong> Hukunce-Hukuncen Ramli 50<br>
+      <strong>3.</strong> Izanazala<br>
+      <strong>4.</strong> Ilimin Aufaqu (Hatumi)<br>
+      <strong>5.</strong> Sa’atul Khabar<br>
+      <strong>6.</strong> Ilimin Hai’a<br>
+      <strong>7.</strong> Ilimin Tafin Hannu (Kaffu)<br>
+      <strong>8.</strong> Ilimin Hisabi (Huruf da Arqam), Bugun Alqaluma<br>
+      <strong>9.</strong> Ilimin Arwahu<br>
+      <strong>10.</strong> Sirruka Masu Ƙarfi da Tasiri — Mujarrabai     
+      <strong>11.</strong> Hukunce-Hukuncen Takarari (Maimaitar Tauraro a Gida Sama da Ɗaya)<br>
+      <strong>12.</strong> Hukunce-Hukuncen Izanazalar Musanyen Gida (Canjin Gida Tsakanin Taurari)<br>
+      <strong>13.</strong> Littafin Yadda Ake Haɗa Maganin Gargajiya — Hayaƙin Jinnu da Jifa, Maganin Iska da Karya Makaru da Sauransu.
+    </p>
+  </section>
+
+  <section class="content" id="ayyuka">
+    <h2>Ayyukan da Mukeyi</h2>
+    <p>Munayin ayyuka na roqon Allah kowanne iri domin neman biyan buqata kamar:- karya asiri, tambaya, Ibdali, dafa’i, tsari, mahabba, kwarjini, farin jini, neman mijiko mata, maganin aljanu, maganin mayu, kambun baka, ido, tsafi, maganin kasuwa da jama’a.
+    Daurin baki, mallakar miji ko mata, promotion, jarrabawa, rinjaye, mallakar hadumi, Dama biyan kowace irin buqata bi’iznillahi</p>
+  </section>
+
+  <section class="content" id="about">
+    <h2>About Us</h2>
+    <p>Adamu Ibrahim Kano is dedicated to providing a peaceful and enriching experience for Muslims worldwide. Explore our resources to deepen your connection with faith, access prayer times, and engage with the Quran in a beautifully designed environment.</p>
+  </section>
+
+  <footer id="test">
+    Contact us:
+    <a href="https://w.me/2348147274735" style="color: aquamarine;">Whatsapp</a>
+    <a href="https://web.facebook.com/adamaljabbari.alkahfi.1/" style="color: blue;">Facebook</a><br>
+    Call: 08147274735
+    <p>&copy; 2025 Adamu Ibrahim Kano. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Ramli 50 Payment Check
+    function openRamli50() {
+      if (localStorage.getItem('hasPaidRaml50') === 'true') {
+        window.location.href = 'ramliafter.html';
+      } else {
+        window.location.href = 'raml50.html';
+      }
+    }
+    document.getElementById('ramliLink').addEventListener('click', openRamli50);
+    document.getElementById('ramliButton').addEventListener('click', openRamli50);
+
+    // Izanazala Payment Check
+    function openIzanazala() {
+      if (localStorage.getItem('hasPaidIzanazala') === 'true') {
+        window.location.href = 'izanazalaafter.html';
+      } else {
+        window.location.href = 'izanazala.html';
+      }
+    }
+    document.getElementById('izanazalaLink').addEventListener('click', openIzanazala);
+
+    // Animate sections
+    const elements = document.querySelectorAll('.content');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.4 });
+    elements.forEach(element => {
+      element.style.opacity = 0;
+      element.style.transform = 'translateY(10vw)';
+      element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>

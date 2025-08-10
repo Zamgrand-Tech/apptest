@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Adamu Ibrahim Kano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+
+        body {
+            background: #1e1e38;
+            color: #e6e6fa;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5vw 0;
+            background: #0f0f1a;
+        }
+
+        .logo-svg {
+            width: 10vw;
+            height: 10vw;
+            max-width: 50px;
+            max-height: 50px;
+            fill: #5b9bd5;
+            transition: transform 0.4s ease;
+        }
+
+        .logo-svg:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-text {
+            font-size: 5vw;
+            font-weight: 700;
+            color: #5b9bd5;
+            letter-spacing: 0.5px;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        nav {
+            background: #0f0f1a;
+            padding: 3vw;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+        }
+
+        nav ul li a {
+            color: #e6e6fa;
+            text-decoration: none;
+            font-size: 4vw;
+            font-family: 'Noto Naskh Arabic', serif;
+            padding: 2vw 4vw;
+            border-radius: 8px;
+            transition: background 0.4s ease, color 0.4s ease;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background: #5b9bd5;
+            color: #fff;
+        }
+
+        .author-section {
+            padding: 10vw 5vw;
+            text-align: center;
+            background: #1e1e38;
+        }
+
+        .author-section h2 {
+            font-size: 6vw;
+            margin-bottom: 5vw;
+            color: #5b9bd5;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        .author-image {
+            width: 50vw;
+            max-width: 200px;
+            border-radius: 25px;
+            margin-bottom: 5vw;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .author-section p {
+            font-size: 4vw;
+            max-width: 90%;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #d3d3d3;
+        }
+
+        footer {
+            background: #0f0f1a;
+            padding: 6vw 5vw;
+            text-align: center;
+            font-size: 3.5vw;
+            color: #a9a9a9;
+        }
+
+        footer a {
+            color: #5b9bd5;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10vw);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-15vw);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        nav ul li {
+            animation: slideIn 0.7s ease-out forwards;
+            animation-delay: calc(0.2s * var(--i));
+        }
+
+        @media (min-width: 769px) {
+            body {
+                max-width: 768px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section class="author-section">
+        <h4 style="color: moccasin;">TAKAITACCEN TARIHIN MAWALLAFI</h4><br>
+        <img src="malam.jpg" alt="Adamu Ibrahim" class="author-image">
+     
+
+
+
+
+
+
+<p>
+  Adamu Ibrahim Alfalakey, mazaunin Kano, shaharren malamin addinin Musulunci, an haife shi a Sharada, Malam Kano, Nigeria a shekarar 1990. 
+  Ya yi karatun Diploma a Aminu Kano College of Islamic and Legal Studies (AKCILS) a fannin Education English & Islamic Studies. 
+  Ya yi digiri (Degree) a Bayero University (B.U.K) a fannin B.A (Ed) Islamic Studies. 
+  Haka kuma, ya yi karatu a Federal University Dutsin-Ma (FUDMA), inda ya karanci B.A Islamic Studies. <br><br>
+  Masani ne a bangaren ilimin Ramli da Hisabi. 
+  Ya wallafa littafin <strong>"Matakan Koyon Ramli na Ɗaya"</strong> domin bai wa mutane horo akan yadda za su koya ilimin Ramli tun daga matakin farko. 
+  Ya ilmantar da mutane sosai ta wannan bangaren. 
+  Littafinsa <strong>"Matakan Koyon Ramli 50"</strong> yana koyar da tsantsar ilimin Ramli da kuma Hisabi cikin sauƙi.
+</p>
+
+
+
+
+
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Adamu Ibrahim Kano. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Smooth Scroll for Navigation (only for in-page links)
+        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    window.location.href = targetId;
+                }
+            });
+        });
+
+        // Animation Trigger on Scroll
+        const elements = document.querySelectorAll('.author-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.4 });
+
+        elements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(10vw)';
+            element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome to Adamu Ibrahim Kano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+
+        body {
+            background: #1e1e38;
+            color: #e6e6fa;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('llll.jpg');
+            background-attachment: fixed; /* Keeps background fixed */
+            position: relative;
+            animation: zoomIn 5s ease-in-out infinite;
+        }
+
+        .welcome::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 30, 56, 0.7); /* Very dark, transparent overlay */
+            z-index: 1;
+        }
+
+        .welcome-content {
+            position: relative;
+            z-index: 2;
+            padding: 5vw;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .welcome-content h1 {
+            font-size: 9vw;
+            font-family: 'Scheherazade New', serif;
+            color: #fff;
+            margin-bottom: 4vw;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .welcome-content p {
+            font-size: 4.5vw;
+            font-family: 'Amiri', serif;
+            max-width: 85%;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #e6e6fa;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Loader */
+        .loader-container {
+            position: fixed;
+            bottom: 5vw;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .loader {
+            width: 12vw;
+            height: 12vw;
+            max-width: 48px;
+            max-height: 48px;
+            border: 5px solid transparent;
+            border-top: 5px solid #5b9bd5;
+            border-right: 5px solid #5b9bd5;
+            border-radius: 50%;
+            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            position: relative;
+        }
+
+        .loader::before {
+            content: '﷽'; /* Islamic Bismillah symbol */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4vw;
+            color: #e6e6fa;
+            font-family: 'Scheherazade New', serif;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(15vw); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes zoomIn {
+            0% { background-size: 100%; }
+            50% { background-size: 110%; }
+            100% { background-size: 100%; }
+        }
+
+        /* Mobile-only compatibility */
+        @media (min-width: 769px) {
+            body {
+                max-width: 768px;
+                margin: 0 auto;
+            }
+            .welcome-content h1 {
+                font-size: 5rem;
+            }
+            .welcome-content p {
+                font-size: 1.5rem;
+            }
+            .loader {
+                width: 48px;
+                height: 48px;
+            }
+            .loader::before {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="welcome">
+        <div class="welcome-content">
+            <h1>أهلاً وسهلاً بكم</h1>
+            <p>Discover a spiritual journey with Adamu Ibrahim Kano, your hub for Islamic resources, prayer times, and Quranic guidance.</p>
+        </div>
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+    </section>
+
+    <script>
+        // Redirect to index.html after 3 seconds
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 3000);
+    </script>
+</body>
+</html>

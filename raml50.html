@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Adamu Ibrahim Kano - Ramli Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+        body {
+            background: #1e1e38;
+            color: #e6e6fa;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5vw 0;
+            background: #0f0f1a;
+        }
+        .logo-container p {
+            font-size: 5vw;
+            font-weight: 700;
+            color: moccasin;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .content {
+            padding: 10vw 5vw;
+            text-align: center;
+        }
+        .animated-title {
+            font-size: 6vw;
+            color: moccasin;
+            margin-bottom: 4vw;
+            font-family: 'Noto Naskh Arabic', serif;
+            animation: fadeInTitle 2s ease-out forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .content p {
+            font-size: 4vw;
+            max-width: 90%;
+            margin: 0 auto 8vw;
+            line-height: 1.8;
+            color: #d3d3d3;
+            text-align: justify;
+        }
+        .btn-buy {
+            background: #5b9bd5;
+            color: #fff;
+            padding: 3vw 6vw;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 4vw;
+            font-family: 'Noto Naskh Arabic', serif;
+            transition: background 0.4s ease, transform 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn-buy:hover {
+            background: #4a7bb8;
+            transform: translateY(-2px);
+        }
+        footer {
+            margin-top: 10vw;
+            text-align: center;
+            font-size: 3.5vw;
+            color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="animated-title">Matakan Koyon Ramli</div>
+
+        <p>
+            Wannan littafi kunshi matakan koyon Ilimin Ramli guda 50, domin 
+            yan koyo da wadanda suke son karin gogewa a wannan Ilimi na Ramli 
+            (geomancy). Kamar yadda muka sani Ramli yaqunshi digo wadanda ake 
+            digawa har a fidda taurari 16 (Ashkal) daga nan kuma se a fara hukunci. <br><br>
+
+            ● Ana iya gane abinda ya faru a baya, da wanda ke faruwa yanzu, da 
+            wanda ze faru nan gaba da izinin Allah. <br><br>
+
+            ● Annabi Idris yana daga cikin Annabawan da Allah yabaiwa wannan ilimi. 
+            Ababin mu’ujiza shine wanda Annabi Muhammad (s.a.w) yai nuni dashi 
+            a cikin Hadisi ingantacce cikin Sahihu Muslim cewa:<br>
+            <i>“ءﺎﯾﺑﻧﻻا نﻣ ﻲﺑﻧ نﺎﻛ كاذﻓ ﮫطﺧ قﻓاو نﻣو طﺧﯾ”</i> <br><br>
+
+            Sabida haka wannan ilimi tsohone kuma halaktacce. 
+            Allah ya bamu ikon fahimtarsa dakuma amfani da shi. Wassalam.
+        </p>
+
+        <!-- Paystack Buttons -->
+        <a href="#" class="btn-buy" onclick="payWithPaystack()">Matakan Koyon Ramli 50 PDF ₦5000</a>
+        <br><br>
+        <a href="#" class="btn-buy" onclick="payWithPaystack()" style="background-color: rgb(236, 20, 243);">Matakan Koyon Ramli 50 Audio ₦5000</a>
+    </div>
+
+    <footer>
+        &copy; 2025 Adamu Ibrahim Kano. All rights reserved.
+    </footer>
+
+    <!-- Paystack Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Redirect if already purchased
+        if (localStorage.getItem("raml50Purchased") === "true") {
+            window.location.href = "ramliafter.html";
+        }
+    });
+
+    function payWithPaystack() {
+        var handler = PaystackPop.setup({
+            key: 'pk_live_70d8ee012d6b08d77421df4d720a20c299e8e88a',
+            email: 'koyonramlidahisabiasaukake@gmail.com',
+            amount: 5000, // ₦50 in Kobo
+            currency: 'NGN',
+            ref: 'RAMLI-' + Math.floor(Math.random() * 1000000000 + 1),
+            callback: function(response) {
+                localStorage.setItem("raml50Purchased", "true");
+                alert('Payment successful! Reference: ' + response.reference);
+                window.location.href = 'ramliafter.html';
+            },
+            onClose: function() {
+                alert('Transaction was cancelled');
+            }
+        });
+        handler.openIframe();
+    }
+</script>
+
+
+</body>
+</html>

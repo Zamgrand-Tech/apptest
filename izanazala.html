@@ -128,24 +128,25 @@
     </footer>
 
     <!-- Paystack Script -->
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+   <script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
-    // Redirect if already paid
+    // Redirect if already paid, open PDF directly
     if (localStorage.getItem('hasPaidIzanazala') === 'true') {
-        window.location.href = 'izanazalaafter.html';
+        window.location.href = 'izanazala.pdf';
     }
 
     function payWithPaystack() {
         var handler = PaystackPop.setup({
             key: 'pk_live_70d8ee012d6b08d77421df4d720a20c299e8e88a',
             email: 'koyonramlidahisabiasaukake@gmail.com',
-            amount: 10000, // ₦50 in Kobo
+            amount: 10000, // ₦5000 in Kobo
             currency: 'NGN',
             ref: 'IZANAZALA-' + Math.floor(Math.random() * 1000000000 + 1),
             callback: function(response) {
                 alert('Payment successful! Reference: ' + response.reference);
                 localStorage.setItem('hasPaidIzanazala', 'true');
-                window.location.href = 'izanazalaafter.html';
+                // Redirect directly to PDF
+                window.location.href = 'izanazala.pdf';
             },
             onClose: function() {
                 alert('Transaction was cancelled');
@@ -156,7 +157,6 @@
 </script>
 
 
+
 </body>
 </html>
-
-
